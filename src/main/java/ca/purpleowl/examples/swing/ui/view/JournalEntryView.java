@@ -14,12 +14,7 @@ public abstract class JournalEntryView {
     private JButton actionButton;
 
     protected JournalEntryView() {
-        actionButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                actionButtonClicked();
-            }
-        });
+        actionButton.addActionListener(e -> actionButtonClicked());
     }
 
     protected abstract void actionButtonClicked();
