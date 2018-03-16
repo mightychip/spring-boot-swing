@@ -5,9 +5,11 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
+/**
+ * This view is for displaying or writing a Journal Entry.  Just a simple JTextArea with an action button for either
+ * saving the record or closing the view.
+ */
 public abstract class JournalEntryView {
     private JPanel entryPanel;
     private JTextArea journalEntry;
@@ -27,6 +29,9 @@ public abstract class JournalEntryView {
         return journalEntry.getText();
     }
 
+    /**
+     * Enable View Mode, which just makes the JTextArea non-editable and sets the text of the Action Button to "Close."
+     */
     public void viewMode() {
         journalEntry.setEditable(false);
         actionButton.setText("Close");

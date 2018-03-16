@@ -11,7 +11,7 @@ This creates a Spring Boot application without an embedded web server, running a
 
 
 ##How to Build it
-For the most part, you just build with the typical maven `install` goal, but if you make any changes to the UI in the UI designer, you're going to have to build through Intellij (`Command + F9` on a Mac, `CTRL + F9` on Windows and probably on Linux, too).
+For the most part, you just build with the typical maven `install` goal, but if you make any changes to the UI in the GUI Designer, you're going to have to build through Intellij (`Command + F9` on a Mac, `CTRL + F9` on Windows and probably on Linux, too).
 
 ##How to Run it
-This is a Spring Boot application, so your typical `spring-boot:run` maven goal will do the trick.
+This is a Spring Boot application, so your typical `spring-boot:run` maven goal will do the trick.  Since it's using an in-memory database, there's no additional setup required for that.

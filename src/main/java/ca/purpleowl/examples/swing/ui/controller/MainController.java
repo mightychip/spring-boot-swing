@@ -9,13 +9,22 @@ import org.springframework.stereotype.Controller;
 import javax.swing.*;
 import java.util.Optional;
 
+/**
+ * This is the main view of the application.  If it gets closed, then the application stops.
+ */
 @Controller
 public class MainController extends JFrame {
     private final MainView view;
     private final JournalEntryRepository repo;
     private final JournalEntryController journalEntryController;
 
-
+    /**
+     * This autowired constructor automagically receives reference to both a JournalEntryRepository (for access to the
+     * persistence mechanism) and a JournalEntryController for writing or displaying JournalEntries.
+     *
+     * @param journalEntryRepository - A JournalEntryRepository instance provided via Autowiring.
+     * @param journalEntryController - A JournalEntryController provided via Autowiring.
+     */
     @Autowired
     public MainController(JournalEntryRepository journalEntryRepository, JournalEntryController journalEntryController) {
         super("What a hideous application!");
@@ -55,6 +64,10 @@ public class MainController extends JFrame {
         journalEntryController.setVisible(true);
     }
 
+    /**
+     * I hook the refresh of the JList up to the validate method.  Then you can call it from another view without
+     * having to actually know the implementation under the hood.  It's just a JFrame that you're validating.
+     */
     @Override
     public void validate() {
         super.validate();
