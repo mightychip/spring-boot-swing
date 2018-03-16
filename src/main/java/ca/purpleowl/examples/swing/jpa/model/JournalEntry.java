@@ -49,6 +49,11 @@ public class JournalEntry {
         return this;
     }
 
+    /**
+     * We override this so that the JList displays the date.  There are other ways to do this, but this is one option.
+     *
+     * @return The String value of the Journal Entry timestamp.
+     */
     @Override
     public String toString() {
         return DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(entryTime);
